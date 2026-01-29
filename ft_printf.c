@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:24:04 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/29 13:22:27 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:56:51 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,17 @@ void	ft_conditions(char *str, int i)
 
 int	ft_printf(const char *format, ...)
 {
-	void	*x;
 	va_list	args;
 
 	va_start(args, format);
-	x = va_arg(args, void *);
+	va_arg(args, void *);
 	va_end(args);
 	return (0);
 }
+
+/*int main()
+{
+    int result = printf("Sentence to know how many %s\n", "characters were written");
+    
+    printf("%d characters were written", result);
+}*/
