@@ -6,7 +6,7 @@
 #    By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/26 14:35:25 by csekakul          #+#    #+#              #
-#    Updated: 2026/01/30 10:04:40 by csekakul         ###   ########.fr        #
+#    Updated: 2026/01/30 14:11:49 by csekakul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ SRCS =	ft_printf.c \
 		ft_putptr_pf.c \
 		ft_putstr_pf.c \
 		ft_putuint_pf.c \
-		ft_strlen_pf.c \
 		ft_aux_pf.c \
 
 NAME = libftprintf.a
