@@ -6,11 +6,11 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:02:32 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 10:03:04 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 15:20:48 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_puthex_pf(unsigned int num, size_t *counter, char *base)
 {

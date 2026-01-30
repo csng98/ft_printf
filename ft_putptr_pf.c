@@ -6,11 +6,11 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 09:42:19 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 10:00:31 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 15:19:44 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putptr_pf(void *ptr, size_t *counter)
 {

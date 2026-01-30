@@ -8,15 +8,25 @@ This ft_printf function is going to be a replica of the original printf function
 
 |Format|Behaviour|
 | ------ |:-----:|
-|%c |Prints a single character|
-|%s |Prints a string (as defined by the common C convention)|
-|%p |The void * pointer argument has to be printed in hexadecimal format|
-|%d |Prints a decimal (base 10) number|
-|%i |Prints an integer in base 10|
-|%u |Prints an unsigned decimal (base 10) number|
-|%x |Prints a number in hexadecimal (base 16) lowercase format|
-|%X |Prints a number in hexadecimal (base 16) uppercase format|
-|%% |Prints a percent sign|
+|**%c**|Prints a single character|
+|**%s**|Prints a string (as defined by the common C convention)|
+|**%p**|The void * pointer argument has to be printed in hexadecimal format|
+|**%d**|Prints a decimal (base 10) number|
+|**%i**|Prints an integer in base 10|
+|**%u**|Prints an unsigned decimal (base 10) number|
+|**%x**|Prints a number in hexadecimal (base 16) lowercase format|
+|**%X**|Prints a number in hexadecimal (base 16) uppercase format|
+|**%%**|Prints a percent sign|
+
+### Variadic functions
+
+One of the biggest challanges of the project are the variadic functions. 
+
+# Resources
+
+[Gitbook ft_printf guide](https://42-cursus.gitbook.io/guide/1-rank-01/ft_printf)
+
+
 
 # Instructions
 | Table					| Command |
@@ -25,9 +35,16 @@ This ft_printf function is going to be a replica of the original printf function
 |Delete object files    |`make clean`|
 |Delete all objects     |`make fclean`|
 |Delete and recompile from scratch|`make re`|
-|
 
+### You can use this main to test
 
-# Resources
+````C
+#include <stdio.h>
+#include "ft_printf.h"
 
-
+int	main(void)
+{
+	printf("My name is %s and I am %d years old", "Csenge" 27);
+	ft_printf("My name is %s and I am %d years old", "Csenge" 27);
+	return (0);
+}

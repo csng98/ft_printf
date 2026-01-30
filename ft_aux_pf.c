@@ -6,11 +6,11 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:04:01 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 15:06:08 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 15:19:15 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_strlen_pf(const char *str)
 {
