@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:24:04 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 12:58:10 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 14:23:44 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_format(va_list va, char *str, size_t *counter)
 			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
 	}
 	else if (*str == '%')
-		ft_putchar_pf(str, counter);
+		ft_putchar_pf(*str, counter);
 }
 
 int	ft_printf(char const *str, ...)
