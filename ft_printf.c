@@ -6,62 +6,55 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:24:04 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/29 14:56:51 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:58:10 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static int	ft_iterate(char *str)
+void	ft_format(va_list va, char *str, size_t *counter)
 {
-	static int	i;
-
-	i = 0;
-	while (str != "%" || str != '\0')
+	if (*str == 'c')
+		ft_putchar_pf(va_arg(va, int), counter);
+	else if (*str == 's')
+		ft_putstr_pf(va_arg(va, char *), counter);
+	else if (*str == 'p')
+		ft_putptr_pf(va_arg(va, void *), counter);
+	else if (*str == 'i' || *str == 'd')
+		ft_putnbr_pf(va_arg(va, int), counter);
+	else if (*str == 'u')
+		ft_putuint_pf(va_arg(va, unsigned int), counter);
+	else if (*str == 'x' || *str == 'X')
 	{
-		write (1, str[i], 1);
-		i++;
+		if (*str == 'x')
+			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+		else
+			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
 	}
-	return (i);
+	else if (*str == '%')
+		ft_putchar_pf(str, counter);
 }
 
-void	ft_conditions(char *str, int i)
+int	ft_printf(char const *str, ...)
 {
-	ft_iterate(str);
-	if (str[i] == "%")
-	{
-		i += 1;
-		if (str[i] == "%")
-			write (1, "%", 1);
-		else if (str[i] == "c")
-			ft_putchar (str);
-		else if (str[i] == "s")
-			prt_str(str);
-		else if (str[i] == "p")
-		else if (str[i] == "d")
-		else if (str[i] == "i")
-			prt_int(str);
-		else if (str[i] == "u")
-		else if (str[i] == "x")
-		else if (str[i] == "X")
-	}
-	if (str[i] == '\0')
+	va_list		va;
+	size_t		counter;
+
+	if (!str)
 		return (0);
+	counter = 0;
+	va_start(va, str);
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			ft_format(va, (char *)str, &counter);
+		}
+		else
+			ft_putchar_pf(*str, &counter);
+		str++;
+	}
+	va_end(va);
+	return (counter);
 }
-
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
-
-	va_start(args, format);
-	va_arg(args, void *);
-	va_end(args);
-	return (0);
-}
-
-/*int main()
-{
-    int result = printf("Sentence to know how many %s\n", "characters were written");
-    
-    printf("%d characters were written", result);
-}*/

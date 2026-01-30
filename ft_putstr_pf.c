@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_str.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 09:34:46 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/29 13:14:29 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 09:58:00 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	prt_str(char const *str)
+void	ft_putstr_pf(char *str, size_t *counter)
 {
-	if (str == NULL)
-		return (write(1, "(nil)", 5));
-	else
-		return (write(1, str, ft_strlen(str)));
+	if (!str)
+		str = "(null)";
+	while (*str)
+	{
+		ft_putchar_pf(*str, counter);
+		str++;
+	}
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	printf("Return value: %s\n", "\0");
-	return (0);
-}*/

@@ -1,53 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_int.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 09:32:35 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/29 13:18:01 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/01/30 09:55:06 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static size_t	i_digits(int n)
+void	ft_putnbr_pf(int num, size_t *counter)
 {
-	size_t	digits;
-
-	digits = 0;
-	if (n <= 0)
-		digits += 1;
-	while (n != 0)
+	if (num == -2147483648)
 	{
-		n /= 10;
-		digits += 1;
+		ft_putnbr_pf((num / 10), counter);
+		ft_putchar_pf('8', counter);
 	}
-	return (digits);
-}
-
-static void	put_int(int n)
-{
-	static char	digits[] = "0123456789";
-
-	if (n > 9)
-		put_int(n / 10);
-	write(1, &digits[n % 10], 1);
-}
-
-int	prt_int(int n)
-{
-	int	len;
-
-	if (n == -2147483648)
-		return ((write(1, "-2147483648", 11)));
-	len = i_digits(n);
-	if (n < 0)
+	else if (num < 0)
 	{
-		write(1, "-", 1);
-		n *= -1;
+		ft_putchar_pf('-', counter);
+		ft_putnbr_pf(-num, counter);
 	}
-	put_int(n);
-	return (len);
+	else
+	{
+		if (num > 9)
+			ft_putnbr_pf((num / 10), counter);
+		ft_putchar_pf(('0' + num % 10), counter);
+	}
 }

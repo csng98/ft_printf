@@ -6,7 +6,7 @@ This ft_printf function is going to be a replica of the original printf functioo
 
 # Instruction
 
-You can compile it with `m̀ake`
+You can compile it with `make`
 
 # Resources
 

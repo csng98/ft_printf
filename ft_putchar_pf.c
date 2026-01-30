@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 12:39:27 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/27 13:33:40 by csekakul         ###   ########.fr       */
+/*   Created: 2026/01/27 09:27:58 by csekakul          #+#    #+#             */
+/*   Updated: 2026/01/30 09:54:14 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_strlen(const char *s)
+void	ft_putchar_pf(char c, size_t *counter)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	write(1, &c, 1);
+	(*counter)++;
 }
