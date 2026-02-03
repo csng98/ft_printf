@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:04:01 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 15:19:15 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/02/03 08:30:21 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	*ft_calloc_pf(size_t number, size_t size)
 {
 	void	*dest;
 
+	if (size != 0 && number > SIZE_MAX / size)
+		return (NULL);
 	dest = malloc (number * size);
 	if (dest == NULL)
 		return (NULL);
@@ -65,9 +67,9 @@ static size_t	ft_len(unsigned long long n, char *base)
 
 char	*ft_aux_pf(unsigned long long n, char *base)
 {
-	char	*str;
-	int		num_len;
-	int		base_len;
+	char		*str;
+	size_t		num_len;
+	size_t		base_len;
 
 	num_len = ft_len(n, base);
 	base_len = ft_strlen_pf(base);

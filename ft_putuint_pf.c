@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 09:41:17 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 15:20:48 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/02/03 08:34:32 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putuint_pf(unsigned int num, size_t *counter)
 	char	*str;
 
 	str = ft_aux_pf(num, "0123456789");
+	if (!str)
+		return ;
 	ft_putstr_pf(str, counter);
 	free(str);
 }

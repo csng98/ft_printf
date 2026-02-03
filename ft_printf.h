@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:00:05 by csekakul          #+#    #+#             */
-/*   Updated: 2026/01/30 14:58:32 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/02/03 08:37:47 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdint.h>
 
 // Hex bases
 # define HEX_UPP_BASE "0123456789ABCDEF"
@@ -26,7 +27,7 @@
 int		ft_printf(char const *str, ...);
 void	ft_putchar_pf(char c, size_t *counter);
 void	ft_putnbr_pf(int num, size_t *counter);
-void	ft_putstr_pf(char *str, size_t *counter);
+void	ft_putstr_pf(char const *str, size_t *counter);
 void	ft_putptr_pf(void *ptr, size_t *counter);
 size_t	ft_strlen_pf(const char *str);
 void	ft_bzero_pf(void *s, size_t n);
