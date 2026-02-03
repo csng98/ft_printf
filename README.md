@@ -25,8 +25,11 @@ One of the biggest challanges of the project are the variadic functions.
 # Resources
 
 [Gitbook ft_printf guide](https://42-cursus.gitbook.io/guide/1-rank-01/ft_printf)
-
-
+[Makefile tutorial](https://makefiletutorial.com/)
+[C notes, debugging](https://cs.yale.edu/homes/aspnes/classes/223/notes.html)
+man printf
+man va_list
+man va_arg
 
 # Instructions
 | Table					| Command |
@@ -44,7 +47,7 @@ One of the biggest challanges of the project are the variadic functions.
 
 int	main(void)
 {
-	printf("My name is %s and I am %d years old", "Csenge" 27);
-	ft_printf("My name is %s and I am %d years old", "Csenge" 27);
+	printf("My name is %s and I am %d years old", "Csenge", 27);
+	ft_printf("My name is %s and I am %d years old", "Csenge", 27);
 	return (0);
 }

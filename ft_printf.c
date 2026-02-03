@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:24:04 by csekakul          #+#    #+#             */
-/*   Updated: 2026/02/03 08:50:39 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:22:39 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ void	ft_format(va_list va, char *str, size_t *counter)
 		ft_putnbr_pf(va_arg(va, int), counter);
 	else if (*str == 'u')
 		ft_putuint_pf(va_arg(va, unsigned int), counter);
-	else if (*str == 'x' || *str == 'X')
-	{
-		if (*str == 'x')
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
-		else
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
-	}
+	else if (*str == 'x')
+		ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+	else if (*str == 'X')
+		ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
 	else if (*str == '%')
 		ft_putchar_pf('%', counter);
 	else
