@@ -4,6 +4,9 @@
 
 This __ft_printf__ function is a replica of the original printf function and it will go into my libft library. I'll use it in future projects where libft is allowed. I __only did the mandatory part__ of the project, this is why my function and the original function are not completely identical. My function cannot handle the '-0.' flag and doesn't manage the '# +' flags either. This is why you might see some large error messages from francinette, but that should be because of the absence of the bonus.
 
+TODO: A detailed explanation and justification of the chosen algorithm and data structure
+must also be included.
+
 ### The function handles the following conversions
 
 |Format|Behaviour|
