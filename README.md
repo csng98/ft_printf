@@ -1,8 +1,8 @@
-*This project has been created as part of the 42 curriculum by csekakul*
+*This project has been created as part of the 42 curriculum by csekakul.*
 
 # Description
 
-This ft_printf function is going to be a replica of the original printf function and it will go into my libft library. I'll use it in future projects where ibft is allowed.
+This __ft_printf__ function is a replica of the original printf function and it will go into my libft library. I'll use it in future projects where libft is allowed. I __only did the mandatory part__ of the project, this is why my function and the original function are not completely identical. My function cannot handle the '-0.' flag and doesn't manage the '# +' flags either. This is why you might see some large error messages from francinette, but that should be because of the absence of the bonus.
 
 ### The function handles the following conversions
 
@@ -20,7 +20,9 @@ This ft_printf function is going to be a replica of the original printf function
 
 ### Variadic functions
 
-One of the biggest challanges of the project are the variadic functions. 
+One of the biggest challanges of the project are the variadic functions.
+
+Printf handles variable number of arguments. For this reason, we don't know in advance how many arguments in which format is the user going to ask to print. The `...` stands for the variable arguments in the function prototype. Then you need to initiate it as if it was a normal variable `va_list		va;`. Before starting to use it in the function you need to start it with `va_start(va, str);` and end it at the end it of the function with `va_end(va);`.
 
 # Resources
 
@@ -40,18 +42,11 @@ One of the biggest challanges of the project are the variadic functions.
 |Delete and recompile from scratch|`make re`|
 
 ### You can use this main to test
+But don't forget to put the `main.c` inside of a test folder and compile it with `cc -Wall -Wextra -Werror -g -I. test/main.c libftprintf.a -o test_printf`.
+
+Then you can simply execute the program with `./test_printf`.
 
 ```C
-#include <stdio.h>
-#include "ft_printf.h"
-
-int	main(void)
-{
-	printf("My name is %s and I am %d years old", "Csenge", 27);
-	ft_printf("My name is %s and I am %d years old", "Csenge", 27);
-	return (0);
-}
-
 #include "ft_printf.h"
 
 int	main(void)
