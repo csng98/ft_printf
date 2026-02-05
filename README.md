@@ -40,9 +40,13 @@ Printf handles variable number of arguments. It is necessary because we don't kn
 |Delete and recompile from scratch|`make re`|
 
 ### You can use this main to test
-But don't forget to put the `main.c` inside of a test folder and compile it with `cc -Wall -Wextra -Werror -g -I. test/main.c libftprintf.a -o test_printf`.
+- First create the `main.c` inside of a test folder.
 
-Then you can simply execute the program with `./test_printf`.
+- Now run `make` to create the object files. 
+
+- Then create the executable file with `cc -Wall -Wextra -Werror -g -I. test/main.c libftprintf.a -o test_printf`.
+
+- Finally you can simply execute the program with `./test_printf`.
 
 ```C
 #include "ft_printf.h"
