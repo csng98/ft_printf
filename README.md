@@ -20,9 +20,7 @@ This __ft_printf__ function is a replica of the original printf function and it 
 
 ### Variadic functions
 
-One of the biggest challanges of the project are the variadic functions.
-
-Printf handles variable number of arguments. For this reason, we don't know in advance how many arguments in which format is the user going to ask to print. The `...` stands for the variable arguments in the function prototype. Then you need to initiate it as if it was a normal variable `va_list		va;`. Before starting to use it in the function you need to start it with `va_start(va, str);` and end it at the end it of the function with `va_end(va);`.
+Printf handles variable number of arguments. It is necessary because we don't know in advance how many arguments is the user going to ask to print. The `...` stands for the variable arguments in the function prototype. Then you need to initiate it as if it was a normal variable `va_list		va;`. Before starting to use it in the function you need to start it with `va_start(va, str);` and end it at the end it of the function with `va_end(va);`.
 
 # Resources
 
@@ -34,7 +32,7 @@ Printf handles variable number of arguments. For this reason, we don't know in a
 - man va_arg
 
 # Instructions
-| Table					| Command |
+| Action					| Command |
 | ----------------------|:-------:|
 |You can compile it with|  `make` |
 |Delete object files    |`make clean`|
