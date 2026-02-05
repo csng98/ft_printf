@@ -24,12 +24,12 @@ One of the biggest challanges of the project are the variadic functions.
 
 # Resources
 
-[Gitbook ft_printf guide](https://42-cursus.gitbook.io/guide/1-rank-01/ft_printf)
-[Makefile tutorial](https://makefiletutorial.com/)
-[C notes, debugging](https://cs.yale.edu/homes/aspnes/classes/223/notes.html)
-man printf
-man va_list
-man va_arg
+- [Gitbook ft_printf guide](https://42-cursus.gitbook.io/guide/1-rank-01/ft_printf)
+- [Makefile tutorial](https://makefiletutorial.com/)
+- [C notes, debugging](https://cs.yale.edu/homes/aspnes/classes/223/notes.html)
+- man printf
+- man va_list
+- man va_arg
 
 # Instructions
 | Table					| Command |
@@ -41,7 +41,7 @@ man va_arg
 
 ### You can use this main to test
 
-````C
+```C
 #include <stdio.h>
 #include "ft_printf.h"
 
@@ -51,3 +51,13 @@ int	main(void)
 	ft_printf("My name is %s and I am %d years old", "Csenge", 27);
 	return (0);
 }
+
+#include "ft_printf.h"
+
+int	main(void)
+{
+	ft_printf("Hello %s! Number: %d\n", "42", 42);
+	ft_printf("Hex: %x | Ptr: %p\n", 255, &main);
+	return (0);
+}
+```
