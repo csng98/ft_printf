@@ -53,6 +53,7 @@ Printf handles variable number of arguments. It is necessary because we don't kn
 
 ```C
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	main(void)
 {

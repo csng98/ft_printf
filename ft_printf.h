@@ -6,7 +6,7 @@
 /*   By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:00:05 by csekakul          #+#    #+#             */
-/*   Updated: 2026/02/05 09:09:21 by csekakul         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:36:40 by csekakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@
 # define HEX_LOW_BASE "0123456789abcdef"
 
 // Functions
-int		ft_printf(char const *str, ...);
-void	ft_putchar_pf(char c, size_t *counter);
-void	ft_putnbr_pf(int num, size_t *counter);
-void	ft_putstr_pf(char const *str, size_t *counter);
-void	ft_putptr_pf(void *ptr, size_t *counter);
-size_t	ft_strlen_pf(const char *str);
-void	ft_bzero_pf(void *s, size_t n);
-void	*ft_calloc_pf(size_t number, size_t size);
-char	*ft_aux_pf(unsigned long long n, char *base);
-void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
-void	ft_putuint_pf(unsigned int num, size_t *counter);
+int				ft_printf(char const *str, ...);
+void			ft_putchar_pf(char c, size_t *counter);
+void			ft_putnbr_pf(int num, size_t *counter);
+void			ft_putstr_pf(char const *str, size_t *counter);
+void			ft_putptr_pf(void *ptr, size_t *counter);
+size_t			ft_strlen_pf(const char *str);
+void			ft_bzero_pf(void *s, size_t n);
+void			*ft_calloc_pf(size_t number, size_t size);
+char			*ft_aux_pf(unsigned long long n, char *base);
+void			ft_puthex_pf(unsigned int num, size_t *counter, char *base);
+void			ft_putuint_pf(unsigned int num, size_t *counter);
 
 #endif

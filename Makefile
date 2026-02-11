@@ -6,7 +6,7 @@
 #    By: csekakul <csekakul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/26 14:35:25 by csekakul          #+#    #+#              #
-#    Updated: 2026/02/05 09:09:16 by csekakul         ###   ########.fr        #
+#    Updated: 2026/02/11 09:29:51 by csekakul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		ar -rcs $(NAME) $(OBJS)
-bonus: $(OBJS)
-		ar -rcs $(NAME) $(OBJS)
 clean:
 		rm -f $(OBJS)
 fclean: clean
@@ -41,4 +39,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
