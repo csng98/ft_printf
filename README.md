@@ -11,7 +11,7 @@ My  approach for this project was the follwing. I write a function that looks at
 
 For the hexadecimal numbers I defined the base in the ft_printf.h file and did the conversion in the ft_aux_pf.c file. In these helping functions, first I allocate the necessary amount of memory, do the conversion and save the result in the memory area. After this I have the right format and I just need to pass it to ft_putstr_pf to get printed.
 The value that printf returns is the number of characters printed. This is why I have a variable called counter, and this is what my function is returning at the end.
-I am handling the following errors. Passing only one %, if the string ended, the function returns 0. Passing various % signs, it will print exactly half as many of them as we passed. Passing a null pointer, it returns the word (nil), just like the original function. Passing an empty string, it returns (null) again just like the original. 
+I am handling the following errors. Passing only one %, if the string ended, the function returns 0. Passing various % signs, it will print exactly half as many of them as we passed. Passing a null pointer, it returns the word (nil), just like the original function. Passing an empty string, it returns (null) again just like the original. I have various safety NULL-checks in my functions to make sure I don't end up in an infinite loop, get an error or unexpected behaviour.
 
 
 ### The function handles the following conversions
