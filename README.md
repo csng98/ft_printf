@@ -4,7 +4,7 @@
 
 This __ft_printf__ function is a replica of the original printf function and it will go into my libft library. I'll use it in future projects where libft is allowed. I __only did the mandatory part__ of the project, this is why my function and the original function are not completely identical. My function cannot handle the '-0.' flag and doesn't manage the '# +' flags either.
 
-My  approach for this project was the follwing. I write a function that looks at the string received as an argument in ft_printf. I iterate through the characters of the string and pass them to ft_putchar all the way until I come across a "%" sign. If I find a "%' in this case I take a look at the next character. Here I call the ft_format function to check which case it is going to be.
+My  approach for this project was the follwing. I write a function that looks at the string received as an argument in ft_printf. I iterate through the characters of the string and pass them to ft_putchar all the way until I come across a "%" sign. If I find a "%" in this case I take a look at the next character. Here I call the ft_format function to check which case it is going to be.
 - If I find a "c", I pass the corresponding dinamic argument to ft_putchar_pf.
 - If I find an "s", I pass the corresponding dinamic argument to ft_putstr_pf.
 - And so on...
@@ -48,7 +48,7 @@ For this project I used AI for the compilation, because I was unsure how am I su
 ## Justification of use of libraries
 
 In my ft_printf.h file I am including the following libraries:
-- strarg.h
+- stdarg.h
 	- It is necessary for the use of the variadic functions.
 - unistd.h
 	- It is necessary to use the function write.
