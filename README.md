@@ -1,18 +1,37 @@
 *This project has been created as part of the 42 curriculum by csekakul.*
 
-# Description
+# ft_printf: Because ft_putnbr() and ft_putstr() Aren't Enough 🖨️
 
-This __ft_printf__ function is a replica of the original printf function and it will go into my libft library. I'll use it in future projects where libft is allowed. I __only did the mandatory part__ of the project, this is why my function and the original function are not completely identical. My function cannot handle the '-0.' flag and doesn't manage the '# +' flags either.
+Welcome to **ft_printf**, a custom structural implementation of the standard `printf` function found in `libc`. This project marks the transition from using static output utilities to engineering dynamic formatting pipelines using C's native variadic argument interfaces.
 
-My  approach for this project was the follwing. I write a function that looks at the string received as an argument in ft_printf. I iterate through the characters of the string and pass them to ft_putchar all the way until I come across a "%" sign. If I find a "%" in this case I take a look at the next character. Here I call the ft_format function to check which case it is going to be.
-- If I find a "c", I pass the corresponding dinamic argument to ft_putchar_pf.
-- If I find an "s", I pass the corresponding dinamic argument to ft_putstr_pf.
-- And so on...
+## 🚀 Project Overview
+The core objective of this project is to replicate the format-parsing string mechanics of `printf` without relying on standard buffer-pooling frameworks. The function evaluates characters sequentially, routes specifiers through an internal parsing core, dynamically handles base conversions via custom memory allocation subroutines, tracks the total printed-byte length via an internal counter, and interfaces safely with low-level kernel write streams.
 
-For the hexadecimal numbers I defined the base in the ft_printf.h file and did the conversion in the ft_aux_pf.c file. In these helping functions, first I allocate the necessary amount of memory, do the conversion and save the result in the memory area. After this I have the right format and I just need to pass it to ft_putstr_pf to get printed.
-The value that printf returns is the number of characters printed. This is why I have a variable called counter, and this is what my function is returning at the end.
-I am handling the following errors. Passing only one %, if the string ended, the function returns 0. Passing various % signs, it will print exactly half as many of them as we passed. Passing a null pointer, it returns the word (nil), just like the original function. Passing an empty string, it returns (null) again just like the original. I have various safety NULL-checks in my functions to make sure I don't end up in an infinite loop, get an error or unexpected behaviour.
+> 💡 **Scope Limitation:** This implementation satisfies the mandatory criteria. It does not process field minimum widths or complex attribute formatting flags (`-`, `0`, `.`, `#`, `+`, or spaces).
 
+## 🛠️ Tech Stack & Standards
+- **Language:** C (Strictly compliant with The Norm standard)
+- **Compilation Tooling:** `cc` utilizing diagnostic flags `-Wall -Wextra -Werror`
+- **Native Context Requirements:** Integrated tracking types and system resources:
+  - `<stdarg.h>` — For variadic argument management (`va_list`, `va_start`, `va_arg`, `va_end`)
+  - `<unistd.h>` — For system stream access (`write`)
+  - `<stdlib.h>` — For isolated byte allocations (`malloc`, `free`)
+  - `<stdint.h>` — For macro evaluation limits (`SIZE_MAX`)
+
+## 📂 Project Structure
+```text
+📂 ft_printf/
+├── 📄 ft_printf.h          # Central Header (Macros, Types, System Inclusions)
+├── 📄 ft_printf.c          # Primary Entry Point & Character Iteration Loop
+├── 📄 ft_putchar_pf.c      # Safe Single Character Output Subroutine
+├── 📄 ft_putstr_pf.c       # String Output Handler with Native Edge Safety
+├── 📄 ft_putnbr_pf.c       # Base-10 Signed Integer Translation Core
+├── 📄 ft_putuint_pf.c      # Base-10 Unsigned Integer Format Handler
+├── 📄 ft_puthex_pf.c       # Low-Level Base-16 Hexadecimal Engine
+├── 📄 ft_putptr_pf.c       # Unsigned Address Conversion & Pointer Printer
+├── 📄 ft_aux_pf.c          # Explicit Memory Allocations & Parsing Utils
+├── 📄 Makefile             # Multi-File Archiver Lifecycle Controller
+└── 📄 README.md            # Structural Overview & Documentation Matrix
 
 ### The function handles the following conversions
 
