@@ -32,6 +32,7 @@ The core objective of this project is to replicate the format-parsing string mec
 ├── 📄 ft_aux_pf.c          # Explicit Memory Allocations & Parsing Utils
 ├── 📄 Makefile             # Multi-File Archiver Lifecycle Controller
 └── 📄 README.md            # Structural Overview & Documentation Matrix
+```
 
 ### The function handles the following conversions
 
